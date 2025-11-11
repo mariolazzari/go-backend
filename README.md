@@ -86,3 +86,9 @@ func main() {
 	}
 }
 ```
+
+### Interfaces
+
+```go
+
+```
