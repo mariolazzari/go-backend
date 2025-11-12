@@ -55,13 +55,15 @@ func processTruck(t Truck) error {
 }
 
 func main() {
-	trucks := []NormalTruck{{id: "Truck-1", cargo: 10}, {id: "Truck-2", cargo: 20}, {id: "Truck-3"}}
-	for _, truck := range trucks {
-		processTruck(&truck)
+	truck := NormalTruck{id: "Truck-1", cargo: 10}
+	err := processTruck(&truck)
+	if err != nil {
+		fmt.Printf("Error processing truck %s\n", truck.id)
 	}
 
-	eTrucks := []ElectrictTruck{{id: "Truck-1", cargo: 10, battery: 100}, {id: "Truck-2", cargo: 20, battery: 200}, {id: "Truck-3", cargo: 30}}
-	for _, truck := range eTrucks {
-		processTruck(&truck)
+	eTruck := ElectrictTruck{id: "eTruck-1", cargo: 10, battery: 100}
+	err = processTruck(&eTruck)
+	if err != nil {
+		fmt.Printf("Error processing truck %s\n", eTruck.id)
 	}
 }
