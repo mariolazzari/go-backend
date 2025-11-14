@@ -653,6 +653,98 @@ func NewTruckManager() truckManager {
 
 ### TCP server
 
+[net package](https://pkg.go.dev/net)
+
+```go
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"net"
+	"strings"
+)
+
+func main() {
+	ln, err := net.Listen("tcp", ":8080")
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	defer ln.Close()
+
+	for {
+		conn, err := ln.Accept()
+		if err != nil {
+
+			log.Fatal(err)
+			return
+		}
+
+		// handle multiple connection
+		go handleConnection(conn)
+	}
+
+}
+
+func handleConnection(conn net.Conn) {
+	defer conn.Close()
+
+	// create new reader from connection
+	reader := bufio.NewReader(conn)
+	// read from clinet command line
+	line, err := reader.ReadString('\n')
+	if err != nil {
+		fmt.Fprintf(conn, "Error reading command: %v\n", err)
+		return
+	}
+
+	parts := strings.SplitN(strings.TrimSpace(line), " ", 2)
+	if len(parts) != 2 {
+		fmt.Fprintf(conn, "Invalid command\n")
+		return
+	}
+}
+```
+
+### Understanding routing
+
+```go
+package route
+
+import (
+	"fmt"
+	"log"
+	"net"
+)
+
+func main() {
+	// connecto to server
+	conn, err := net.Dial("tcp", "localhost:8080")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer conn.Close()
+
+	// write to server
+	fmt.Fprintf(conn, "GET /index.html\n")
+
+	// read server response
+	bs := make([]byte, 1024)
+	n, err := conn.Read(bs)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(string(bs[:n]))
+}
+```
+
+### HTTP server
+
+[http](https://pkg.go.dev/net/http)
+
 ```go
 
 ```
