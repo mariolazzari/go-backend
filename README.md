@@ -4,6 +4,7 @@
 
 ### Resources
 
+- [Project](https://github.com/sikozonpc/GopherSocial/tree/main)
 - [Github](https://github.com/sikozonpc/GopherSocial)
 - [Context](https://youtu.be/Q0BdETrs1Ok)
 - [Error Handling](https://youtu.be/dKUiCF3abHc)
@@ -881,7 +882,67 @@ func main() {
 
 ### Development enviroment
 
+```sh
+mkdir social
+cd social
+go mod init github.com/mariolazzari/go-backend/social
+mkdir bin
+mkdir cmd
+cd cmd
+mkdir api
+mkdir cmd
+cd migrate
+mkdir migrations
+cd ../../social
+mkdir iternal
+mkdir docs
+mkdir scripts
+mkdir web
+```
+
+#### Links
+
 [Docker](https://www.docker.com/products/docker-desktop/)
 [Course](https://www.youtube.com/watch?v=7VLmLOiQ3ck&t=3647s)
 [Course](https://www.youtube.com/watch?v=h3fqD6IprIA)
 [Course](https://www.youtube.com/watch?v=s3XItrqfccw)
+
+### Clean layered architecture
+
+- Separation of concerns: each layer must be separated by a clear barrier
+  - transport
+  - service
+  - storage
+- Dependency inversion principle: inject dependency in each layer, do not call them directly, promoting loose coupling and testing
+- Adaptibilty to change: modularity means flexibility
+-
+
+#### Links
+
+[Book](https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164)
+
+### HTTP server and API
+
+```sh
+go get -u github.com/go-chi/chi/v5
+```
+
+### Hor reload
+
+[Air](https://github.com/air-verse/air)
+
+```sh
+go install github.com/air-verse/air@latest
+air init
+air
+```
+
+### Enviroment varaibles
+
+[direnv](https://direnv.net/)
+[godotenv](https://github.com/joho/godotenv)
+[Factor config](https://12factor.net/config)
+
+## Databases
+
+### Repository pattern
