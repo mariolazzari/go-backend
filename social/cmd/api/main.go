@@ -4,14 +4,19 @@ import (
 	"log"
 
 	"github.com/mariolazzari/go-backend/social/internal/env"
+	"github.com/mariolazzari/go-backend/social/internal/store"
 )
 
 func main() {
 	cfg := config{
 		addr: env.GetString("ADDR", ":8080"),
 	}
+
+	store := store.NewStorage(nil)
+
 	app := &application{
 		config: cfg,
+		store:  store,
 	}
 
 	mux := app.mount()
