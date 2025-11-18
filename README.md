@@ -1027,5 +1027,28 @@ func (r *InMemoryRepository) GetByID(id int) (*User, error) {
 ### Implementing repository pattern
 
 ```go
+package store
 
+import (
+	"context"
+	"database/sql"
+)
+
+type Storage struct {
+	Posts interface {
+		Create(ctx context.Context) error
+	}
+	Users interface {
+		Create(ctx context.Context) error
+	}
+}
+
+func NewStorage(db *sql.DB) Storage {
+	return Storage{
+		Posts: &PostsStore{db},
+		Users: &UsersStore{db},
+	}
+}
 ```
+
+### Persisting data with SQL
