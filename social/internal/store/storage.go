@@ -10,7 +10,7 @@ type Storage struct {
 		Create(ctx context.Context, post *Post) error
 	}
 	Users interface {
-		Create(ctx context.Context, user *User) error
+		Create(ctx context.Context, tx *sql.Tx, user *User) error
 	}
 }
 
