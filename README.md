@@ -1126,6 +1126,55 @@ func (s *PostsStore) Create(ctx context.Context, post *Post) error {
 }
 ```
 
+### .envrc
+
+```sh
+touch .envrc
+export ADDR=":8080"
+export DATABASE_URL="postgres://mario:password@localhost:5432/social"
+export REDIS_URL="redis://localhost:6379"
+export NODE_ENV="development"
+direnv allow
+```
+
+### Migrate
+
+```sh
+migrate create -seq -ext sql -dir ./cmd/migrate/migtations create_users
+make migrate-up
+```
+
+### Makefile
+
+```sh
+include .envrc
+MIGRATIONS_PATH = ./cmd/migrate/migrations
+
+.PHONY: test
+test:
+	@go test -v ./...
+
+.PHONY: migrate-create
+migration:
+	@migrate create -seq -ext sql -dir $(MIGRATIONS_PATH) $(filter-out $@,$(MAKECMDGOALS))
+
+.PHONY: migrate-up
+migrate-up:
+	@migrate -path=$(MIGRATIONS_PATH) -database=$(DB_ADDR) up
+
+.PHONY: migrate-down
+migrate-down:
+	@migrate -path=$(MIGRATIONS_PATH) -database=$(DB_ADDR) down $(filter-out $@,$(MAKECMDGOALS))
+
+.PHONY: seed
+seed: 
+	@go run cmd/migrate/seed/main.go
+
+.PHONY: gen-docs
+gen-docs:
+	@swag init -g ./api/main.go -d cmd,internal && swag fmt
+```
+
 ## Links
 
 [Udemy](https://www.udemy.com/course/backend-engineering-with-go/learn/lecture/45982301#overview)
@@ -1143,3 +1192,4 @@ func (s *PostsStore) Create(ctx context.Context, post *Post) error {
 [migrate](https://github.com/golang-migrate/migrate/tree/master/cmd/migrate)
 [Postgres client](https://www.postgresql.org/docs/current/citext.html)
 [GNU make](https://www.gnu.org/software/make/manual/make.html)
+[JSON](https://www.w3schools.com/js/js_json.asp)
