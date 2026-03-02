@@ -1125,3 +1125,21 @@ func (s *PostsStore) Create(ctx context.Context, post *Post) error {
 	return nil
 }
 ```
+
+## Links
+
+[Udemy](https://www.udemy.com/course/backend-engineering-with-go/learn/lecture/45982301#overview)
+[GopherSocial](https://github.com/sikozonpc/GopherSocial)
+[12 factor app](https://12factor.net/config)
+[Maturity model](https://martinfowler.com/articles/richardsonMaturityModel.html)
+[Go net](https://pkg.go.dev/net)
+[API min course](https://www.youtube.com/watch?v=7VLmLOiQ3ck&t=3647s)
+[Air](https://github.com/air-verse/air)
+[direnv](https://direnv.net/)
+[godotenv](https://github.com/joho/godotenv)
+[Repository pattern](https://threedots.tech/post/repository-pattern-in-go/)
+[sqlx](https://github.com/jmoiron/sqlx)
+[sqlboiler](https://github.com/aarondl/sqlboiler)
+[migrate](https://github.com/golang-migrate/migrate/tree/master/cmd/migrate)
+[Postgres client](https://www.postgresql.org/docs/current/citext.html)
+[GNU make](https://www.gnu.org/software/make/manual/make.html)

@@ -11,10 +11,6 @@ type Store interface {
 	GetByID(id int) (*User, error)
 }
 
-type application struct {
-	store Store
-}
-
 type User struct {
 	ID   int
 	Name string
