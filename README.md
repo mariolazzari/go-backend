@@ -1193,3 +1193,4 @@ gen-docs:
 [Postgres client](https://www.postgresql.org/docs/current/citext.html)
 [GNU make](https://www.gnu.org/software/make/manual/make.html)
 [JSON](https://www.w3schools.com/js/js_json.asp)
+[validator](https://github.com/go-playground/validator)
