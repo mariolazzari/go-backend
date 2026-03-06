@@ -1167,7 +1167,7 @@ migrate-down:
 	@migrate -path=$(MIGRATIONS_PATH) -database=$(DB_ADDR) down $(filter-out $@,$(MAKECMDGOALS))
 
 .PHONY: seed
-seed: 
+seed:
 	@go run cmd/migrate/seed/main.go
 
 .PHONY: gen-docs
@@ -1194,3 +1194,6 @@ gen-docs:
 [GNU make](https://www.gnu.org/software/make/manual/make.html)
 [JSON](https://www.w3schools.com/js/js_json.asp)
 [validator](https://github.com/go-playground/validator)
+[Index for like](https://niallburkley.com/blog/index-columns-for-like-in-postgres/)
+[Postgres index](https://www.postgresql.org/docs/13/indexes-intro.html)
+[Postgres Trigram](https://www.postgresql.org/docs/9.5/pgtrgm.html)
