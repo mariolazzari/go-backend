@@ -1199,3 +1199,4 @@ gen-docs:
 [Postgres Trigram](https://www.postgresql.org/docs/9.5/pgtrgm.html)
 [Go Swag](https://github.com/swaggo/swag?tab=readme-ov-file)
 [Chi Swagger](https://github.com/swaggo/http-swagger)
+[User Zap](https://pkg.go.dev/go.uber.org/zap#section-readme)
