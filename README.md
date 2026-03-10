@@ -1197,3 +1197,5 @@ gen-docs:
 [Index for like](https://niallburkley.com/blog/index-columns-for-like-in-postgres/)
 [Postgres index](https://www.postgresql.org/docs/13/indexes-intro.html)
 [Postgres Trigram](https://www.postgresql.org/docs/9.5/pgtrgm.html)
+[Go Swag](https://github.com/swaggo/swag?tab=readme-ov-file)
+[Chi Swagger](https://github.com/swaggo/http-swagger)
