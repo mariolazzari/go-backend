@@ -1200,3 +1200,5 @@ gen-docs:
 [Go Swag](https://github.com/swaggo/swag?tab=readme-ov-file)
 [Chi Swagger](https://github.com/swaggo/http-swagger)
 [User Zap](https://pkg.go.dev/go.uber.org/zap#section-readme)
+[Embed file](https://gobyexample.com/embed-directive)
+[Go templates](https://www.digitalocean.com/community/tutorials/how-to-use-templates-in-go)
