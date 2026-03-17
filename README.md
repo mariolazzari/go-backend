@@ -1202,3 +1202,5 @@ gen-docs:
 [User Zap](https://pkg.go.dev/go.uber.org/zap#section-readme)
 [Embed file](https://gobyexample.com/embed-directive)
 [Go templates](https://www.digitalocean.com/community/tutorials/how-to-use-templates-in-go)
+[Redis docs](https://redis.io/docs/latest/)
+[Mocking](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/mocking)
