@@ -1204,3 +1204,4 @@ gen-docs:
 [Go templates](https://www.digitalocean.com/community/tutorials/how-to-use-templates-in-go)
 [Redis docs](https://redis.io/docs/latest/)
 [Mocking](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/mocking)
+[Testify](https://github.com/stretchr/testify)
