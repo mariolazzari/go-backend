@@ -1205,3 +1205,4 @@ gen-docs:
 [Redis docs](https://redis.io/docs/latest/)
 [Mocking](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/mocking)
 [Testify](https://github.com/stretchr/testify)
+[Rate limit](https://www.youtube.com/watch?v=m5oyY9fgZPs&t=579s)
